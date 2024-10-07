@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'cmake .'
-                sh 'cd build'
                 sh 'ninja'
             }
         }
