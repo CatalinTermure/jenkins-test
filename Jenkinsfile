@@ -9,7 +9,7 @@ void setBuildStatus(String message, String state) {
 }
 
 pipeline {
-    agent { docker { image 'ubuntu:latest' } }
+    agent { dockerfile true }
     stages {
         stage('Build') {
             steps {
