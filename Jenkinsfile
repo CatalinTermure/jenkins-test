@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cmake .'
+                sh 'cmake . --preset=ninja'
                 dir('build') {
                     sh 'ninja'
                 }
