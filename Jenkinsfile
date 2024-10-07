@@ -3,8 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                dir('vcpkg') {
+                    sh './bootstrap-vcpkg.sh'
+                }
                 sh 'cmake . --preset=ninja'
-                dir('build') {
+                dir('out/build/ninja') {
                     sh 'ninja'
                 }
             }
