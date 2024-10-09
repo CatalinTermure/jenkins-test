@@ -3,13 +3,12 @@
   "configurePresets": [
     {
       "name": "ninja",
-      "displayName": "Configure preset using toolchain file",
+      "displayName": "Build with Ninja and vcpkg",
       "description": "Sets Ninja generator, build and install directory",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build",
+      "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_TOOLCHAIN_FILE": "",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
       }
     }
