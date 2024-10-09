@@ -17,14 +17,12 @@ pipeline {
                             url: 'https://github.com/microsoft/vcpkg.git'
                         ]]
                     )
+                    sh './bootstrap-vcpkg.sh'
                 }
             }
         }
         stage('Build') {
             steps {
-                dir('vcpkg') {
-                    sh './bootstrap-vcpkg.sh'
-                }
                 sh 'cmake . --preset=ninja'
                 sh 'ninja'
             }
